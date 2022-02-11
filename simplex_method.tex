@@ -1,0 +1,45 @@
+\documentclass[a4paper,11pt]{jsarticle}
+\usepackage{optidef}
+
+
+% 数式
+\usepackage{amsmath,amsfonts}
+\usepackage{bm}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+
+
+\begin{document}
+
+\title{Simplex method}
+\author{Ryota Iwamoto}
+\date{\today}
+\maketitle
+
+\section{What is Simplex method?}
+
+In 1947, Dantzig suggested Simplex method. It has more practical ability but is logically not polynomial time algorithm (多項式時間アルゴリズム). After that, Khachiyan suggested ellipsoid method (楕円体法) as polynomial time algorithm at the first time in 1979 and Karmarker suggested interior point (内点法) method in 1984. Interior method is superior to simplex method at ability but simplex method efficiently implement re-optimization, to solve the problem again after adding variables or constraints. Currently both methods are often used as practical algorithm.
+
+\section{Standard form}
+
+Here we think below linear programming problem which is called standard form: 
+
+\begin{maxi}|l|
+  {}{\sum_{j=1}^{n}{c_{j}}{x_{j}}}
+  {}{}
+  \addConstraint{\sum_{j=1}^{n}{c_{j}}{x_{j}}\leq{b_{i}}}, \quad i =1,\dots, m
+  \addConstraint{{x_{j}}\geq0}{}, \quad j =1,\dots, n.
+\end{maxi}
+
+Standard form is a linear programming problem which has below characteristics: 
+
+\begin{enumerate}
+  \item it maximizes the value of objective function
+  \item all values has nonnegative constraint
+  \item for all constraints except for nonnegative constraints, left side is less than or equal to right side 
+\end{enumerate}
+
+We can transform any linear programming problem to standard form.
+
+
+\end{document}
